@@ -45,6 +45,9 @@ jobs:
       RDP_PASS: Bullet@12345
 
     steps:
+      - name: check repo
+        uses: actions/checkout@v4
+        
       - name: Decide runtime
         run: |
           function Yes($v){ "$v" -match '^(?i:true|1|yes|on)$' }
