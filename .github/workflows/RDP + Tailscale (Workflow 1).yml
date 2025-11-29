@@ -71,7 +71,7 @@ jobs:
           $VDD_PATH = "${{ github.workspace }}\.bin\parsec-vdd-0.45.0.0.exe"
           if (-not (Test-Path $VDD_PATH)) {
             Write-Error "Error: VDD executable not found at $VDD_PATH"
-            exit 1
+            exit 1}
             Start-Process $VDD_PATH -ArgumentList '/S' -Wait
             $RegPath = "HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\NOEDID_246"
           if (-not (Test-Path $RegPath)) { New-Item -Path $RegPath -Force | Out-Null }
