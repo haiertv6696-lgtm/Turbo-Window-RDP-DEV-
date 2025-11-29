@@ -68,14 +68,15 @@ jobs:
           Write-Host "Tailscale IPv4: $ip"
       - name: Install VDD
         run: |
-          $url="https://builds.parsec.app/driver/vdd/windows/release/parsec-vdd-windows-2.1.0.0.exe"
-          $dst="$env:TEMP\parsec-vdd.exe"
-          Invoke-WebRequest $url -OutFile $dst
-          Start-Process $dst -ArgumentList '/S' -Wait
-          $RegPath = "HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\NOEDID_246"
+          $VDD_PATH = "${{ github.workspace }}\.bin\parsec-vdd-0.45.0.0.exe"
+          if (-not (Test-Path $VDD_PATH)) {
+            Write-Error "Error: VDD executable not found at $VDD_PATH"
+            exit 1
+            Start-Process $VDD_PATH -ArgumentList '/S' -Wait
+            $RegPath = "HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\NOEDID_246"
           if (-not (Test-Path $RegPath)) { New-Item -Path $RegPath -Force | Out-Null }
           Set-ItemProperty -Path $RegPath -Name "SimulatedDisplayFlags" -Value 1 -Type DWORD
-          Write-Host "Virtual Display Driver installed and configured."
+          Write-Host "Virtual Display Driver installed and configured from repository."
 
       - name: Enable RDP
         run: |
