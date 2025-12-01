@@ -5,7 +5,7 @@ on:
     inputs:
       ts_tailnet:         { description: "haiertv6696@gmail.com", required: true }
       ts_api_key:         { description: "tskey-api-kYTh51pexC11CNTRL-pPTxR99WujYK2BJeeqtRkYqEmKDZvofy", required: true }
-      ts_authkey:         { description: "tskey-auth-kfX9yZKENe11CNTRL-8c7R4NhCYEBhNBW1eda4FBxtrgSmEHBh", required: true }
+      ts_authkey:         { description: "tskey-auth-koGByCJPJL11CNTRL-TBeKj8g9L6B6HZFcq7Do5B7JZm9vHcj3", required: true }
       quick_test:         { description: "Run 5-minute test", type: boolean, default: false }
       runtime_minutes:    { description: "Runtime minutes", required: false, default: "355" }
       do_purge:           { description: "Purge bullet* devices", required: false, default: "true" }
