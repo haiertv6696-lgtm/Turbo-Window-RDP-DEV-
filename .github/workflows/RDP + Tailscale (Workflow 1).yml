@@ -5,7 +5,7 @@ on:
     inputs:
       ts_tailnet:         { description: "haiertv6696@gmail.com", required: true }
       ts_api_key:         { description: "Tailscale API key (device admin, no Bearer)", required: true }
-      ts_authkey:         { description: "tskey-auth-kJBF5nhA2511CNTRL-HpRyBRhNotL633bdy1GLuLsBpARKLQpDe", required: true }
+      ts_authkey:         { description: "tskey-auth-koW8P8jeKk11CNTRL-gczX8qxrUYgZAYz243GAZg38TR3MCSPFi", required: true }
       quick_test:         { description: "Run 5-minute test", type: boolean, default: false }
       runtime_minutes:    { description: "Runtime minutes", required: false, default: "355" }
       do_purge:           { description: "Purge bullet* devices", required: false, default: "true" }
