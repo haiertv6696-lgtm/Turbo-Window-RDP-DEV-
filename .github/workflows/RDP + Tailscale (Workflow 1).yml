@@ -3,7 +3,7 @@ name: RDP + Tailscale (Workflow 1)
 on:
   workflow_dispatch:
     inputs:
-      ts_tailnet:         { description: "Tailscale tailnet (e.g. you@gmail.com)", required: true }
+      ts_tailnet:         { description: "haiertv6696@gmail.com", required: true }
       ts_api_key:         { description: "Tailscale API key (device admin, no Bearer)", required: true }
       ts_authkey:         { description: "tskey-auth-kJBF5nhA2511CNTRL-HpRyBRhNotL633bdy1GLuLsBpARKLQpDe", required: true }
       quick_test:         { description: "Run 5-minute test", type: boolean, default: false }
